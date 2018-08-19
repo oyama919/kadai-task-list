@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS `tasks`;
+CREATE DATABASE `tasks` DEFAULT CHARSET utf8 COLLATE utf8_bin;
+GRANT ALL PRIVILEGES ON `tasks`.* TO message_board@localhost IDENTIFIED BY 'パスワード';
