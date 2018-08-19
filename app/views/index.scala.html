@@ -2,27 +2,27 @@
 
 @main(Messages("GetTasks")) {
 
-<div class="container">
+  <div class="container">
     <h1>@Messages("GetTasks")</h1>
     <table class="table table-striped">
-        <thead>
+      <thead>
         <tr>
-            <th>id</th>
-            <th>@Messages("Title")</th>
-            <th>@Messages("Task")</th>
+          <th>id</th>
+          <th>@Messages("Task")</th>
+          <th>@Messages("Status")</th>
         </tr>
-        </thead>
-        <tbody>
+      </thead>
+      <tbody>
         @for(task <- taskSeq) {
-        <tr>
+          <tr>
             <td><a href="@routes.GetTaskController.index(task.id.get)">@task.id.get</a></td>
-            <td>@task.title</td>
             <td>@task.content</td>
-        </tr>
+            <td>@task.status</td>
+          </tr>
         }
-        </tbody>
+      </tbody>
     </table>
     <a href="@routes.CreateTaskController.index()" class="btn btn-primary">@Messages("CreateTask")</a>
-</div>
+  </div>
 
 }

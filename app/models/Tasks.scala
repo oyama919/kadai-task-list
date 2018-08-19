@@ -6,8 +6,8 @@ import scalikejdbc._
 import skinny.orm._
 
 case class Task(id: Option[Long],
-                title: Option[String],
                 content: String,
+                status:  Option[String],
                 createAt: ZonedDateTime,
                 updateAt: ZonedDateTime)
 
@@ -21,10 +21,10 @@ object Task extends SkinnyCRUDMapper[Task] {
     autoConstruct(rs, n)
 
   private def toNamedValues(record: Task): Seq[(Symbol, Any)] = Seq(
-    'title    -> record.title,
     'content     -> record.content,
-    'createAt -> record.createAt,
-    'updateAt -> record.updateAt
+    'status      -> record.status,
+    'createAt    -> record.createAt,
+    'updateAt    -> record.updateAt
   )
 
   def create(task: Task)(implicit session: DBSession): Long =
