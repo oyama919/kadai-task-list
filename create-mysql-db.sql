@@ -1,3 +1,3 @@
 DROP DATABASE IF EXISTS `tasks`;
 CREATE DATABASE `tasks` DEFAULT CHARSET utf8 COLLATE utf8_bin;
-GRANT ALL PRIVILEGES ON `tasks`.* TO kadai_task_list@localhost IDENTIFIED BY 'パスワード';
+GRANT ALL PRIVILEGES ON `tasks`.* TO tasks@localhost IDENTIFIED BY 'パスワード';
