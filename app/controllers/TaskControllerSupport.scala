@@ -10,6 +10,7 @@ trait TaskControllerSupport { this: AbstractController =>
   protected val form = Form(
     mapping(
       "id"    -> optional(longNumber),
+      "title" -> nonEmptyText,
       "content"  -> nonEmptyText
     )(TaskForm.apply)(TaskForm.unapply)
   )
